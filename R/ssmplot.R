@@ -29,7 +29,8 @@ ssmplot<- function(inmod){
             infotmp1<-as.character(merge(infotmp,turtleinfo)$original_id)
             # add title to the plot
             p1<-p+labs(title=infotmp1)
-            results<-append(results,p1)
+            p2<-list(p1)
+            results<-append(results,p2)
         } else {
             turtle.l<-unique(inmod1$data$id)
             for (y in 1:length(turtle.l)){
@@ -50,7 +51,8 @@ ssmplot<- function(inmod){
                 infotmp1<-as.character(merge(infotmp,turtleinfo)$original_id)
                 # add title to the plot
                 p1<-p+labs(title=infotmp1)
-                results<-append(results,p1)
+                p2<-list(p1)
+                results<-append(results,p2)
             }
         }
     }
