@@ -16,7 +16,7 @@ ssmdataget<- function(inmod){
       # if hierarchical
       dplyr::select(inmod1$summary,c(id,date,lon,lat,b)) %>% as.data.frame() ->tmp
     }
-    tmp<-rbind(tmp,results)
+    results<-rbind(tmp,results)
   }
   return(results)
 }
