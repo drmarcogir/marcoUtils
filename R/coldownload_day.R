@@ -5,7 +5,7 @@
 #' @ to = end year
 #'
 
-coldownload<-function(var=NULL,from,to){
+coldownload_day<-function(var=NULL,from,to){
   library(stringi)
   # generate sequence of years
   year.l<-seq(from=from,to=to,by=1)
