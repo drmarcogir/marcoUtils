@@ -11,10 +11,10 @@ ssmdataget<- function(inmod){
     inmod1<-get(load(inmod[i]))
     # if not hierarchical
     if(class(inmod1)=="ssm"){
-      dplyr::select(inmod1[[1]]$summary,c(id,date,lon,lat,b)) %>% as.data.frame() ->tmp
+      dplyr::select(inmod1[[1]]$summary,c(id,date,lon,lat,b,b.5)) %>% as.data.frame() ->tmp
     } else {
       # if hierarchical
-      dplyr::select(inmod1$summary,c(id,date,lon,lat,b)) %>% as.data.frame() ->tmp
+      dplyr::select(inmod1$summary,c(id,date,lon,lat,b,b.5)) %>% as.data.frame() ->tmp
     }
     results<-rbind(tmp,results)
   }
