@@ -17,7 +17,7 @@ birdliferast<-function(speclist=NULL,inpath=NULL,outpath=NULL,rastg=NULL,season=
       foreach(i=1:length(speclist)) %dopar% {
         cat(as.character(speclist[i]))
         cat("\n")
-        binomial<-paste(str_split_fixed(speclist[i],"_",3)[1:2],collapse="_")
+        binomial<-str_split_fixed(speclist[i],".shp",3)[,1]
         filep<-paste(inpath,"/",speclist[i],sep="")
         tmpshp<-readShapePoly(filep,force_ring=TRUE,delete_null_obj=TRUE,proj4string=inproj1)
         tmpshp1<-spTransform(tmpshp,outproj1)
